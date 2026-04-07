@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="LatentVLA: Enhancing Long-Horizon Vision-Language-Action Models with a Latent World Model">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LatentVLA Demo</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+
+  <style>
+    /* 视频容器样式：圆角、阴影、背景色 */
+    .video-container {
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      background: #000; /* 黑色背景防止加载闪烁 */
+      margin-bottom: 10px;
+    }
+    
+    .video-container video {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    .video-caption {
+      background-color: #f5f5f5;
+      padding: 8px;
+      text-align: center;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #4a4a4a;
+    }
+
+    /* 调整列间距 */
+    .columns {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">LatentVLA: Enhancing Long-Horizon Vision-Language-Action Models with a Latent World Model</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Anonymous Authors</span>
+          </div>
+          
+          <!-- <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="#" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="#" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="ai ai-arxiv"></i></span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="#" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fab fa-youtube"></i></span>
+                  <span>Video</span>
+                </a>
+              </span>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Learning an accurate world model to predict future states is fundamental for Vision-Language-Action (VLA) agents to achieve long-horizon reasoning and effective planning. 
+            However, prevailing world models predominantly operate in raw pixel space, which presents two critical challenges: (1) high-dimensional observations introduce significant task-irrelevant perceptual noise, leading to perceptual overfitting, and (2) the prohibitive computational cost of pixel-level autoregressive prediction limits the feasible modeling horizon. 
+          </p>
+          <p>
+            In this paper, we propose LatentVLA, a novel paradigm that performs world modeling in a highly compressed latent space. By leveraging a lightweight Adaptive Attention-based Pooling mechanism, we distill high-dimensional visual features into a single, semantically-rich latent world token per frame. This approach significantly reduces computational complexity, enabling the model to scale stably to long-horizon planning steps. 
+            Unlike pixel-level models, LatentVLA operates in a high-level semantic space to effectively decouple environmental dynamics from perceptual noise. Across LIBERO, Metaworld, and real-world Piper tasks, LatentVLA with lightweight LoRA fine-tuning on a  &pi;<sub>0</sub> base surpasses the significantly &pi;<sub>0.5</sub> model. This performance gap highlights the efficacy of our semantic abstraction mechanism over traditional scaling.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+    <div class="content has-text-justified">
+      <p>
+        PCA visualization: Shows the clustering consistency across 10 tasks before and after feature compression.
+      </p>
+    </div>
+    <img src="./static/images/img-1.png" alt="PNG" width="900" height="600">
+
+
+
+    <div class="content has-text-justified">
+      <p>
+        Full LIBERO_Long inference: Success rate screenshots for configurations from 20/16 to 20/20, ensuring full traceability.
+      </p>
+    </div>
+    <div class="content has-text-justified">
+      <p>
+        20/16  Replan_step 10:
+      </p>
+    </div>
+    <img src="./static/images/img-2.png" alt="PNG" width="900" height="600">
+
+    <div class="content has-text-justified">
+      <p>
+        20/18  Replan_step 10:
+      </p>
+    </div>
+    <img src="./static/images/img-3.png" alt="PNG" width="900" height="600">
+
+    <div class="content has-text-justified">
+      <p>
+        20/18  Replan_step 11:
+      </p>
+    </div>
+    <img src="./static/images/img-4.png" alt="PNG" width="900" height="600">
+
+    <div class="content has-text-justified">
+      <p>
+        20/18  Replan_step 12:
+      </p>
+    </div>
+    <img src="./static/images/img-5.png" alt="PNG" width="900" height="600">
+
+    <div class="content has-text-justified">
+      <p>
+        20/20  Replan_step 10:
+      </p>
+    </div>
+    <img src="./static/images/img-6.png" alt="PNG" width="900" height="600">
+</section>
+
+</body>
+</html>

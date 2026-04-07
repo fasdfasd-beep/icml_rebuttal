@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="LatentVLA: Enhancing Long-Horizon Vision-Language-Action Models with a Latent World Model">
+  <meta name="keywords" content="VLA, World Model, Robotics, Latent Space">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LatentVLA: Enhancing Long-Horizon Vision-Language-Action Models with a Latent World Model</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">LatentVLA: Enhancing Long-Horizon Vision-Language-Action Models
+with a Latent World Model</h1>
+          
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Anonymous Authors</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="#" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="#" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="#" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="#" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Learning an accurate world model to predict future states is fundamental for Vision-Language-Action (VLA) agents to achieve long-horizon reasoning and effective planning. 
+            However, prevailing world models predominantly operate in raw pixel space, which presents two critical challenges:
+          </p>
+          <p>
+            (1) high-dimensional observations introduce significant task-irrelevant perceptual noise, leading to perceptual overfitting, and (2) the prohibitive computational cost of pixel-level autoregressive prediction limits the feasible modeling horizon. 
+            In this paper, we propose LatentVLA, a novel paradigm that performs world modeling in a highly compressed latent space. By leveraging a lightweight Adaptive Attention-based Pooling mechanism, we distill high-dimensional visual features into a single, semantically-rich latent world token per frame. This approach significantly reduces computational complexity, enabling the model to scale stably to long-horizon planning steps.
+          </p>
+          <p>
+            Unlike pixel-level models, LatentVLA operates in a high-level semantic space to effectively decouple environmental dynamics from perceptual noise. 
+            Across LIBERO, Metaworld, and real-world Piper tasks, LatentVLA with lightweight LoRA fine-tuning on a $\pi_0$ base surpasses the significantly $\pi_{0.5}$ model. This performance gap highlights the efficacy of our semantic abstraction mechanism over traditional scaling.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3 has-text-centered">Experimental Results</h2>
+      <div id="results-carousel" class="carousel results-carousel">
+        
+        <div class="item item-demo1">
+          <video poster="" id="demo1" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/normal_banana.mp4" type="video/mp4">
+          </video>
+          <p class="has-text-centered">Task 1 Demo</p>
+        </div>
+
+        <div class="item item-demo2">
+          <video poster="" id="demo2" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/noise_banana.mp4" type="video/mp4">
+          </video>
+          <p class="has-text-centered">Task 2 Demo</p>
+        </div>
+
+        <div class="item item-demo3">
+          <video poster="" id="demo3" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/muti_banana.mp4" type="video/mp4">
+          </video>
+          <p class="has-text-centered">Task 3 Demo</p>
+        </div>
+
+        <div class="item item-demo4">
+          <video poster="" id="demo4" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/pumb_banana.mp4" type="video/mp4">
+          </video>
+          <p class="has-text-centered">Task 4 Demo</p>
+        </div>
+
+         <div class="item item-demo5">
+          <video poster="" id="demo5" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/fold_clothes.mp4" type="video/mp4">
+          </video>
+          <p class="has-text-centered">Task 4 Demo</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            Template borrowed from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer> -->
+
+</body>
+</html>
