@@ -51,64 +51,6 @@
 </head>
 <body>
 
-<section class="hero">
-  <div class="hero-body">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered">
-        <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">LatentVLA: Enhancing Long-Horizon Vision-Language-Action Models with a Latent World Model</h1>
-          <div class="is-size-5 publication-authors">
-            <span class="author-block">Anonymous Authors</span>
-          </div>
-          
-          <!-- <div class="column has-text-centered">
-            <div class="publication-links">
-              <span class="link-block">
-                <a href="#" class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon"><i class="fas fa-file-pdf"></i></span>
-                  <span>Paper</span>
-                </a>
-              </span>
-              <span class="link-block">
-                <a href="#" class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon"><i class="ai ai-arxiv"></i></span>
-                  <span>arXiv</span>
-                </a>
-              </span>
-              <span class="link-block">
-                <a href="#" class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon"><i class="fab fa-youtube"></i></span>
-                  <span>Video</span>
-                </a>
-              </span>
-            </div>
-          </div> -->
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-            Learning an accurate world model to predict future states is fundamental for Vision-Language-Action (VLA) agents to achieve long-horizon reasoning and effective planning. 
-            However, prevailing world models predominantly operate in raw pixel space, which presents two critical challenges: (1) high-dimensional observations introduce significant task-irrelevant perceptual noise, leading to perceptual overfitting, and (2) the prohibitive computational cost of pixel-level autoregressive prediction limits the feasible modeling horizon. 
-          </p>
-          <p>
-            In this paper, we propose LatentVLA, a novel paradigm that performs world modeling in a highly compressed latent space. By leveraging a lightweight Adaptive Attention-based Pooling mechanism, we distill high-dimensional visual features into a single, semantically-rich latent world token per frame. This approach significantly reduces computational complexity, enabling the model to scale stably to long-horizon planning steps. 
-            Unlike pixel-level models, LatentVLA operates in a high-level semantic space to effectively decouple environmental dynamics from perceptual noise. Across LIBERO, Metaworld, and real-world Piper tasks, LatentVLA with lightweight LoRA fine-tuning on a  &pi;<sub>0</sub> base surpasses the significantly &pi;<sub>0.5</sub> model. This performance gap highlights the efficacy of our semantic abstraction mechanism over traditional scaling.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section class="section">
     <div class="content has-text-justified">
       <p>
